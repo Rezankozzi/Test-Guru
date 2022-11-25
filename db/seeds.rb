@@ -15,9 +15,13 @@ class DataCreate
 
   def create_user_tests
     User.all.each do |user|
-      2.times do
-        UserTest.create user_id: user.id, test_id: Test.all.sample.id
-      end
+      2.times { UserTest.create user_id: user.id, test_id: Test.all.sample.id }
+    end
+  end
+
+  def create_tests_by_user
+    User.all.each do |user|
+      4.times { Test.find_by(author_id: nil).update(author_id: user.id) }
     end
   end
 
@@ -71,7 +75,10 @@ class DataCreate
 
   def create_all
     delete_all
-    %i[create_categories create_users create_user_tests].each { |method| send method }
+    %i[create_categories
+       create_users
+       create_user_tests
+       create_tests_by_user].each { |method| send method }
   end
 end
 
