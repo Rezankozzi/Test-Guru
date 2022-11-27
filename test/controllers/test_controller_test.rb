@@ -1,7 +1,7 @@
 require "test_helper"
 
 class TestControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
+  # tests "the truth" do
   #   assert true
   # end
 end
