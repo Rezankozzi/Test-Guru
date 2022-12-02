@@ -14,7 +14,7 @@ class Test < ApplicationRecord
 
   validates :level, numericality: { only_integer: true }
   validates :title, presence: true, uniqueness: { scope: :level,
-                                                  message: 'test with this name and level already exists' }
+                                                  message: 'tests with this name and level already exists' }
 
   def self.tests_title_by_category(category)
     tests_by_category(category).order(title: :asc).pluck(:title)
