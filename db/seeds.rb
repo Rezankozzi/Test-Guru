@@ -7,6 +7,19 @@ class DataCreate
     @tests = Test.all
   end
 
+  def create_all
+    delete_all
+    %i[create_users
+       create_categories
+       create_test_passage].each { |method| send method }
+  end
+
+  private
+
+  def delete_all
+    [Answer, TestPassage, Question, Test, Category, User].each(&:delete_all)
+  end
+
   def create_users
     3.times do
       User.create([name: Faker::Internet.username(specifier: 5..6),
@@ -59,21 +72,16 @@ class DataCreate
     answers.sample.update(correct: true)
   end
 
-  def create_user_tests
+  def create_test_passage
     @users.each do |user|
-      2.times { UserTest.create(user_id: user.id, test_id: @tests.sample.id) }
+      3.times do
+        test = @tests.sample
+        TestPassage.create(user_id: user.id,
+                           test_id: test.id,
+                           current_question_id: test.questions.sample.id,
+                           correct_questions: rand(4))
+      end
     end
-  end
-
-  def delete_all
-    [Answer, Question, UserTest, Test, Category, User].each(&:delete_all)
-  end
-
-  def create_all
-    delete_all
-    %i[create_users
-       create_categories
-       create_user_tests].each { |method| send method }
   end
 end
 

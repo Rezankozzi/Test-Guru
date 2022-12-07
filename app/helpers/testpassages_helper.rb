@@ -1,0 +1,2 @@
+module TestpassagesHelper
+end
