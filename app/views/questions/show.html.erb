@@ -1,8 +1,8 @@
 <p>
   <strong> Question title: </strong>
-  <tr><%= @question.body %></tr>
+  <%= @question.body %>
 </p>
 
 <tr><%= link_to 'Back', test_path(@question.test_id) %></tr>
-<tr><%= link_to 'New answer'%></tr>
-<%#= render 'answers/answers'%>
+<tr><%= link_to 'New answer', new_question_answer_path(@question)%></tr>
+<%= render 'answers/answers'%>

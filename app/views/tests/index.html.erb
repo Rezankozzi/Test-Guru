@@ -4,6 +4,7 @@
     <th>Title</th>
     <th>Level</th>
     <th>Questions</th>
+    <th>Action</th>
   </tr>
 
   <% @tests.each do |test| %>
@@ -11,6 +12,7 @@
       <td><%= link_to test.title, test_path(test.id)%></td>
       <td><%= test_level(test.level) %></td>
       <td><%= test.questions.size %></td>
+      <td><%= link_to 'Pass', start_test_path(test) %></td>
     </tr>
   <% end %>
 </table>
