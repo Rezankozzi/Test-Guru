@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root 'tests#index'
+
   resources :test_passages, only: %i[update show result] do
     get 'result', on: :member
   end
