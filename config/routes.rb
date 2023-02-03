@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :tests do
-    get 'start', on: :member
+    post 'start', on: :member
     resources :questions, shallow: true
   end
 

@@ -3,6 +3,6 @@
   <%= @question.body %>
 </p>
 
-<tr><%= link_to 'Back', test_path(@question.test_id) %></tr>
-<tr><%= link_to 'New answer', new_question_answer_path(@question)%></tr>
+<tr><%= button_to 'Back', test_path(@question.test_id), method: :get %></tr>
+<tr><%= button_to 'New answer', new_question_answer_path(@question)%></tr>
 <%= render 'answers/answers'%>

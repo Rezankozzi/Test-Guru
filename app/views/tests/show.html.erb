@@ -2,11 +2,14 @@
   <strong>Title:</strong>
   <%= @test.title %>
 </p>
-
 <p>
   <strong>Level:</strong>
   <%= test_level(@test.level)%>
 </p>
-<td><%= link_to 'Back', tests_path%></td>
-<td><%= link_to 'New questions', new_test_question_path(@test)%></td>
+<td>
+  <form action="/tests">
+    <button>Back</button>
+  </form>
+  <%= button_to 'New question',  new_test_question_path(@test), method: :get%>
+</td>
 <%= render 'questions/questions'%>
