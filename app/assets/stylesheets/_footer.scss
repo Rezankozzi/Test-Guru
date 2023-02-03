@@ -1,0 +1,43 @@
+.container {
+  background: #30d6da;
+  min-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.footer {
+  padding-top: 45px;
+  padding-bottom: 50px;
+}
+
+.footer_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+
+.footer_copyrigth {
+  color: rgb(114, 197, 241);
+  line-height: 1.1;
+  height: 70px;
+  padding-top: 25px;
+}
+
+.footer_copyrigth_name {
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.footer_copyrigth_name p {
+  background: #30d6da;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.footer_copyrigth p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+}
