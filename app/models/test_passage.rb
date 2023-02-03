@@ -17,6 +17,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def succeeded?
+    test_percent >= 85 ? 'success' : 'failed'
+  end
+
   def count_questions
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
@@ -43,7 +47,6 @@ class TestPassage < ApplicationRecord
   def correct_answers
     current_question.answers.correct_answers
   end
-
 
   def set_current_question
     self.current_question = self.test.questions.first

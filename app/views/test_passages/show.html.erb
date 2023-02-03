@@ -9,12 +9,14 @@
   <%= form.collection_check_boxes :answer_ids,
                                   @test_passage.current_question.answers,
                                   :id, :body do |b| %>
+    <div class="color_text"
+         style="--color: <%= b.object.correct == false ? 'red' : 'green' %> ">
       <p>
         <%= b.check_box id: b.object.id %>
         <%= b.label %>
       </p>
   <% end %>
-
+  </div>
   <p><%= form.submit 'Next' %></p>
 
 <% end %>
