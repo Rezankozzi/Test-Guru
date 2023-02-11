@@ -1,0 +1,8 @@
+<h1>The test "<%= @test_passage.test.title %>" was completed!</h1>
+<td>You correctly answered :
+  <span style= 'color: green'>
+    <%= @test_passage.test_percent %>%.
+  </span>
+  <%= 'Congratulations, the test was passed successfully!' %>
+</td>
+<td><%= button_to 'All tests', tests_path, method: :get %></td>

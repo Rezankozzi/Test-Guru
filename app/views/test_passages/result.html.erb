@@ -1,15 +1,1 @@
-<% result = { 'failed' => ['red', 'You failed to pass test!'],
-              'success' => ['green', 'Congratulations, the test was passed successfully!'] } %>
-<% test_result = result[@test_passage.succeeded?] %>
 
-<h1>The test "<%= @test_passage.test.title %>" was completed!</h1>
-<td>You correctly answered :
-  <span style=" color: <%= test_result[0] %>">
-    <%= @test_passage.test_percent %>%.
-  </span>
-  <%= test_result[1] %>
-</td>
-
-<form action="/tests">
-  <button>All tests</button>
-</form>

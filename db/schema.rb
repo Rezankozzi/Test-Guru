@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_05_184600) do
+ActiveRecord::Schema.define(version: 2023_02_11_230420) do
 
   create_table "answers", force: :cascade do |t|
     t.boolean "correct", default: false, null: false
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2022_12_05_184600) do
     t.integer "test_id"
     t.integer "current_question_id"
     t.integer "correct_questions", default: 0
-    t.integer "count_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"

@@ -6,7 +6,6 @@
     <th>Questions</th>
     <th>Action</th>
   </tr>
-
   <% @tests.each do |test| %>
     <tr>
       <td><%= link_to test.title, test_path(test.id)%></td>

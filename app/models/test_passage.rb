@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TestPassage < ApplicationRecord
+  SUCCESS_PASSING = 85
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -17,8 +18,8 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def succeeded?
-    test_percent >= 85 ? 'success' : 'failed'
+  def success?
+    test_percent >= SUCCESS_PASSING
   end
 
   def count_questions

@@ -2,15 +2,8 @@
   <strong> Question title: </strong>
   <%= @question.body %>
 </p>
-
-<td>
-  <form action="<%= test_path(@question.test_id) %>">
-    <button>Back</button>
-  </form>
+<table>
+  <%= button_to 'Back',  test_path(@question.test_id), method: :get%>
   <%= button_to 'New answer',  new_question_answer_path(@question), method: :get%>
-</td>
-
-<!--<td><%#= button_to 'Back', test_path(@question.test_id), method: :get %></td>-->
-<!--<td><%#= button_to 'New answer', new_question_answer_path(@question)%></td>-->
-
+</table>
 <%= render 'answers/answers'%>

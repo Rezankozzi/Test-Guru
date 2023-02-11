@@ -29,7 +29,6 @@ class AnswersController < ApplicationController
 
   def destroy
     @answer.destroy
-    byebug
     redirect_to question_answers_path
   end
 
