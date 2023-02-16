@@ -1,3 +1,19 @@
 // Place all the styles related to the tests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.button {
+  float: left;
+}
+
+body, ol, ul, td {
+  background-color: #bee5e3;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+a:-webkit-any-link {
+  color: #333333;
+  cursor: pointer;
+  text-decoration: underline
+}

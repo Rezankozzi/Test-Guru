@@ -4,13 +4,14 @@
     <th>Title</th>
     <th>Level</th>
     <th>Questions</th>
+    <th>Action</th>
   </tr>
-
   <% @tests.each do |test| %>
     <tr>
       <td><%= link_to test.title, test_path(test.id)%></td>
       <td><%= test_level(test.level) %></td>
       <td><%= test.questions.size %></td>
+      <td><%= button_to 'Pass', start_test_path(test) %></td>
     </tr>
   <% end %>
 </table>

@@ -1,0 +1,22 @@
+<h1>Passing the test : "<%= @test_passage.test.title %>"</h1>
+<b>Question <%= @test_passage.count_questions %> of
+   <%= @test_passage.test.questions.size %> :
+   "<%= @test_passage.current_question.body %>"
+</b>
+<%= form_with url: test_passage_path(@test_passage),
+              local: true, method: :put,
+              include_hidden: false do |form| %>
+  <%= form.collection_check_boxes :answer_ids,
+                                  @test_passage.current_question.answers,
+                                  :id, :body do |b| %>
+    <div class="color_text"
+         style="--color: <%= b.object.correct == false ? 'red' : 'green' %> ">
+      <p>
+        <%= b.check_box id: b.object.id %>
+        <%= b.label %>
+      </p>
+  <% end %>
+    </div>
+  <p><%= form.submit 'Next' %></p>
+<% end %>
+
