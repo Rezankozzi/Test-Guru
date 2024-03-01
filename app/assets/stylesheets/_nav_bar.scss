@@ -1,0 +1,47 @@
+header {
+  min-height: 100px;
+  background: linear-gradient(-45deg, #30d6da, #8fd7e4);
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+  border-radius: 5px;
+}
+
+.drop_button {
+  background-color: rgba(239, 239, 239, 0.89);
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.nav {
+  position: relative;
+  display: inline-block;
+  right: auto;
+}
+
+.drop_down {
+  position: absolute;
+  background-color: rgba(239, 239, 239, 0.89);
+  min-width: 152px;
+  display: none;
+  top: 41px;
+  border-radius: 3px;
+}
+
+.drop_down a {
+  text-decoration: none;
+  color: #666666;
+  padding: 10px 15px;
+  display: block;
+}
+
+.drop_down a:hover {
+  background-color: rgba(250, 180, 160, 0.93);
+}
+
+.nav:hover .drop_down {
+  display: block;
+}
