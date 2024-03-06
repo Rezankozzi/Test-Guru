@@ -1,10 +1,21 @@
 <header>
   <a href="/tests"><img src="logo.png" alt="Test-Guru"></a>
   <div class="nav">
-    <button class="drop_button">My account</button>
-    <div class="drop_down">
-      <a href="/login">Log In</a>
-      <a href="/signup">Sign Up</a>
+    <div class="account">
+    <% if logged_in? %>
+      <div class="welcome_user">
+        <th>Welcome,</th>
+        <th><%= "<#{current_user.name}>" %></th>
+        <th>  Guru!</th>
+        <th><%= button_to 'Log out', logout_path %></th>
+      </div>
+    <% else %>
+  <button class="drop_button">My account</button>
+      <div class="drop_down">
+        <a href="/login">Log In</a>
+        <a href="/signup">Sign Up</a>
+      </div>
     </div>
+      <% end %>
   </div>
 </header>

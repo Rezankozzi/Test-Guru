@@ -13,6 +13,8 @@ html,body {
 }
 
 .content-container {
+  justify-content: center;
+  display: flex;
   flex-grow: 1;
 }
 

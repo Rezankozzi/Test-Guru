@@ -1,4 +1,6 @@
 header {
+  position: sticky;
+  top: 0;
   min-height: 100px;
   background: linear-gradient(-45deg, #30d6da, #8fd7e4);
   padding: 0 100px;
@@ -9,17 +11,22 @@ header {
   border-radius: 5px;
 }
 
+.nav {
+  position: relative;
+  display: inline-block;
+  right: auto;
+}
+
+.welcome_user {
+  display: flex;
+  max-width: 400px;
+}
+
 .drop_button {
   background-color: rgba(239, 239, 239, 0.89);
   padding: 10px;
   font-size: 15px;
   border-radius: 3px;
-}
-
-.nav {
-  position: relative;
-  display: inline-block;
-  right: auto;
 }
 
 .drop_down {

@@ -3,17 +3,19 @@
 class SessionsController < ApplicationController
   def new; end
 
+  def start; end
+
   def create
     if find_user&.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to cookies[:requested_page] || root_path
     else
-      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
+      flash.now[:alert] = 'Check your <E_mail> and <Password> please!'
       render :new
     end
   end
 
-  def destroy
+  def delete
     session[:user_id] = nil
     redirect_to tests_path
   end

@@ -1,5 +1,5 @@
+<%= render 'shared/errors', resource: @user %>
 <%= form_with model: @user, local: true do |form| %>
-  <%#= render 'shared/errors', resource: @user %>
   <p>
     <%= form.label "Your name" %>
     <%= form.text_field :name, id: :name %>
