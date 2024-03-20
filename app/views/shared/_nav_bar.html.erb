@@ -5,8 +5,10 @@
     <% if logged_in? %>
       <div class="welcome_user">
         <th>Welcome,</th>
-        <th><%= "<#{current_user.name}>" %></th>
-        <th>  Guru!</th>
+        <th>
+          <span style="font-weight: bolder" ><%= "#{current_user.name}" %></span>
+        </th>
+        <th>Guru!</th>
         <th><%= button_to 'Log out', logout_path %></th>
       </div>
     <% else %>

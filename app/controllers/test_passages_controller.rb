@@ -13,13 +13,7 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def result
-    if @test_passage.success?
-      render 'test_passages/success_passing'
-    else
-      render 'test_passages/failed_passing'
-    end
-  end
+  def result; end
 
   private
 
