@@ -1,1 +1,7 @@
-
+<div class="result-container">
+<% if @test_passage.success? %>
+   <%= render 'failed_passing'%>    
+<% else %>
+  <%=  render 'success_passing'%>
+<% end %>
+</div>

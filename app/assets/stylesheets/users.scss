@@ -1,0 +1,29 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.registration {
+  margin: auto;
+  background: linear-gradient(-45deg, #30d6da, #8fd7e4);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  padding: 30px;
+  text-align: center;
+}
+
+.registration h3 {
+  font-size: 26px;
+}
+
+.errors {
+  border-radius: 3px;
+  border-color: #B00100;
+}
+.errors  h2 {
+  color: #B00100;
+}
+
+.flash_alert {
+  color: #ea0e16;
+  font-weight: bold;
+}
