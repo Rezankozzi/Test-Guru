@@ -6,23 +6,18 @@ class SessionsController < ApplicationController
   def start; end
 
   def create
-    if find_user&.authenticate(params[:password])
-      session[:user_id] = @user.id
+    @user = User.find_by(email: params[:email])
+    if @user&.authenticate(params[:password])
+      new_session
       redirect_to cookies[:requested_page] || root_path
     else
-      flash.now[:alert] = 'Check your <E_mail> and <Password> please!'
+      flash.now[:alert] = 'Check your <Email> and <Password> please!'
       render :new
     end
   end
 
   def delete
     session[:user_id] = nil
-    redirect_to tests_path
-  end
-
-  private
-
-  def find_user
-    @user = User.find_by(e_mail: params[:e_mail])
+    redirect_to root_path
   end
 end

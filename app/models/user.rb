@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
 
-  validates :e_mail, presence: true,
+  validates :email, presence: true,
                      uniqueness: true,
                      format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
 

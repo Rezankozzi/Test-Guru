@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :new_session
 
   private
 
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     return if current_user
 
     cookies[:requested_page] = request.url
-    redirect_to login_path
+    redirect_to login_path, alert: :'Log in or register, please!'
   end
 
   def current_user
@@ -18,5 +18,9 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user.present?
+  end
+
+  def new_session
+    session[:user_id] = @user.id
   end
 end
