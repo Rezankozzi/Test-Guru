@@ -2,7 +2,8 @@
 
 module SessionsHelper
   def flash_messages
-    flash.to_hash&.values
+    message = flash.to_hash.values&.join("\n\n")
+    simple_format(message, class: 'flash-alert')
   end
 end
 

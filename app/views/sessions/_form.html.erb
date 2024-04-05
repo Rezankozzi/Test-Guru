@@ -1,7 +1,5 @@
 <%= form_with url: sessions_path, local: true do |form| %>
-<% flash_messages.each do |v| %>
-    <%= content_tag :p, v, class: 'flash-alert'%>
-  <% end %>
+<%= flash_messages %>
   <p>
     <%= form.label :email %>
     <%= form.text_field :email, id: :email %>
