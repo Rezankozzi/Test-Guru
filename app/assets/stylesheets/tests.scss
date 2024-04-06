@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+html,body {
+  height: 100%;
+}
+
+.content-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container {
+  justify-content: center;
+  display: flex;
+  flex-grow: 1;
+}
+
 .button {
   float: left;
 }
@@ -16,4 +32,12 @@ a:-webkit-any-link {
   color: #333333;
   cursor: pointer;
   text-decoration: underline
+}
+
+.tests-container h1{
+  text-align: center;
+}
+
+.tests-container table {
+  min-width: 700px;
 }
