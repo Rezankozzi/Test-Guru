@@ -11,7 +11,7 @@ class TestsController < ApplicationController
   def show; end
 
   def start
-    @user = User.all.sample
+    # @user = User.all.sample
     @user.tests.push(@test)
     redirect_to @user.test_passage(@test)
   end

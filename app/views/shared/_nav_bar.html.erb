@@ -2,20 +2,14 @@
   <a href="/tests"><img src="logo.png" alt="Test-Guru"></a>
   <div class="nav">
     <div class="account">
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <div class="welcome_user">
         <th>Welcome,</th>
         <th>
-          <span style="font-weight: bolder; margin-right: 7px" ><%= "#{current_user.name}" %></span>
+          <span style="font-weight: bolder; margin-right: 7px" ><%= "#{current_user.email}" %></span>
         </th>
         <th>Guru!</th>
-        <th><%= button_to 'Log out', logout_path %></th>
-      </div>
-    <% else %>
-  <button class="drop_button">My account</button>
-      <div class="drop_down">
-        <a href="/login">Log In</a>
-        <a href="/signup">Sign Up</a>
+        <th><%= button_to 'Log out', destroy_user_session_path %></th>
       </div>
     </div>
       <% end %>
