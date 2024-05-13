@@ -11,16 +11,11 @@
   font-size: 26px;
 }
 
-.errors {
-  border-radius: 3px;
-  border-color: #ea0e16;
+input {
+  margin-bottom: 10px;
 }
 
-.errors  h2 {
-  color: #ea0e16;
-}
-
-.flash-alert {
-  color: #ea0e16;
-  font-weight: bold;
+.registration li {
+  color: red;
+  text-align: left;
 }

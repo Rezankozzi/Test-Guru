@@ -1,6 +1,0 @@
-<% if resource.errors.present? %>
-    <h2 style="color: #B00100"><%= pluralize(resource.errors.count, 'error') %> detected:</h2>
-      <% resource.errors.full_messages.each do |message| %>
-        <p style="color: #B00100"><%= message %></p>
-      <% end %>
-<% end %>

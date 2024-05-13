@@ -1,17 +1,15 @@
 <header>
-  <a href="/tests"><img src="logo.png" alt="Test-Guru"></a>
+  <a href="/tests"><img src="/logo.png" alt="Test-Guru"></a>
   <div class="nav">
     <div class="account">
     <% if user_signed_in? %>
       <div class="welcome_user">
         <th>Welcome,</th>
-        <th>
-          <span style="font-weight: bolder; margin-right: 7px" ><%= "#{current_user.email}" %></span>
-        </th>
+        <th><span style="font-weight: bolder; margin-right: 7px" ><%= "#{current_user.email}" %></span></th>
         <th>Guru!</th>
         <th><%= button_to 'Log out', destroy_user_session_path %></th>
+        <% end %>
       </div>
     </div>
-      <% end %>
   </div>
 </header>
